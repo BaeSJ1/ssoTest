@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <script type="text/javascript">
+        SSAM.listener((value)=>{
+            console.log(value['fcmToken']);
+            if(value['fcmToken'] !== null && value['fcmToken'] !== undefined && value['fcmToken'].trim() !== ''){
+                console.log('로그인 완료');
+                window.location.href = 'success.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>TRY LOGIN!</h1>
+</body>
+</html>
